@@ -7,7 +7,8 @@ class AQIParameters(FlaskForm):
     aqiparameter = SelectField('category',choices=[("temperatureC","temperatureC"),
                                            ("pressure","pressure"),
                                            ("humidity","humidity"),
-                                           ("aqius","aqius")])
+                                           ("aqius","aqius"),
+                                           ("coordinates","coordinates")])
 
     '''
     Complete this class with the appropriate parameters inside SelectField for the dropdown menu
@@ -40,14 +41,16 @@ def aqi_parameter(lstview):
     longitude = air_quality_index['data']['location']['coordinates'][1]
     coordinates = str(latitude)+', '+str(longitude)
 
-    temperatureC = air_quality_index['data']['current']['weather'].tp
-    pressure = air_quality_index['data']['current']['weather'].pr
-    humidity = air_quality_index['data']['current']['weather'].hu
-    aqius = air_quality_index['data']['pollution'].aqius
+    temperatureC = air_quality_index['data']['current']['weather']["tp"]
+    pressure = air_quality_index['data']['current']['weather']["pr"]
+    humidity = air_quality_index['data']['current']['weather']["hu"]
+    aqius = air_quality_index['data']['current']['pollution']["aqius"]
 
+    print(lstview)
     parameters = {'coordinates': coordinates,
                   'temperatureC': str(temperatureC),
                   'pressure': str(pressure),
                   'humidity': str(humidity),
-                  'aqius': str(aqius)}
-    return parameters.lstview
+                  'aqius': str(aqius),
+                  'coordinates': str(coordinates)}
+    return parameters[lstview]

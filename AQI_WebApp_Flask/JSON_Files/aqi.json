@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "data": {
+    "city": "West Hollywood",
+    "state": "Florida",
+    "country": "USA",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -80.179247,
+        26.052378
+      ]
+    },
+    "current": {
+      "weather": {
+        "ts": "2020-11-13T00:00:00.000Z",
+        "tp": 25,
+        "pr": 1013,
+        "hu": 94,
+        "ws": 3.1,
+        "wd": 160,
+        "ic": "04n"
+      },
+      "pollution": {
+        "ts": "2020-11-13T00:00:00.000Z",
+        "aqius": 12,
+        "mainus": "p2",
+        "aqicn": 4,
+        "maincn": "p2"
+      }
+    }
+  }
+}
